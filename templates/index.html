@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>OPTIMIZEU - Work Hard To Get Better Life</title>
+      <!--
+         - favicon
+         -->
+      <!-- {{ url_for('static', filename='style.css') }} -->
+      <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+      <!--
+         - custom css link
+         -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+      <!--
+         - google font link
+         -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+         rel="stylesheet"
+         />
+      <!--
+         - preload images
+         -->
+      <!--{{ url_for('static', filename='assets/img/home-bg.jpg') }}-->
+      <link rel="preload" as="image" href="{{ url_for('static', filename='/images/hero-banner.png') }}" />
+      <link rel="preload" as="image" href="{{ url_for('static', filename='/images/hero-circle-one.png') }}" />
+      <link rel="preload" as="image" href="{{ url_for('static', filename='/images/hero-circle-two.png') }}" />
+      <link rel="preload" as="image" href="{{ url_for('static', filename='/images/heart-rate.svg') }}" />
+      <link rel="preload" as="image" href="{{ url_for('static', filename='/images/calories.svg') }}" />
+      <style>
+         .video-card.has-bg-image {
+         background-image: url("{{ url_for('static', filename='images/video-banner.jpg') }}");
+         background-size: cover;
+         background-position: center;
+         }
+      </style>
+   </head>
+   <body id="top">
+      <!--
+         - #HEADER
+         -->
+      <header class="header" data-header>
+         <div class="container">
+            <a href="#" class="logo">
+               <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+               <span class="span">OPTIMIZEU</span>
+            </a>
+            <nav class="navbar" data-navbar>
+               <button
+                  class="nav-close-btn"
+                  aria-label="close menu"
+                  data-nav-toggler
+                  >
+                  <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+               </button>
+               <ul class="navbar-list">
+                  <li>
+                     <a href="#home" class="navbar-link active" data-nav-link>Home</a>
+                  </li>
+                  <li>
+                     <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+                  </li>
+                  <li>
+                     <a href="#class" class="navbar-link" data-nav-link>Classes</a>
+                  </li>
+               </ul>
+            </nav>
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            </button>
+         </div>
+      </header>
+      <main>
+         <article>
+            <!--
+               - #HERO
+               -->
+            <section
+               class="section hero bg-dark has-after has-bg-image"
+               id="home"
+               aria-label="hero"
+               data-section
+               style="background-image: url('{{ url_for('static', filename='images/hero-bg.png') }}')"
+               >
+               <div class="container">
+                  <div class="hero-content">
+                     <p class="hero-subtitle">
+                        <strong class="strong">The Best</strong> Fitness Club
+                     </p>
+                     <h1 class="h1 hero-title">Work Hard and Smart To Get Better Life</h1>
+                     <p class="section-text">
+                        Welcome to OPTIMIZEU – Your AI-Powered Fitness Trainer
+                        Achieve your fitness goals with the power of artificial intelligence! OPTIMIZEU is your personal fitness companion, designed to help you get in shape, stay motivated, and reach your full potential. Whether you're just starting your fitness journey or looking to take your training to the next level, OPTIMIZEU delivers customized workout plans, diet recommendations.
+                     </p>
+                     <a href="{{ url_for('ai') }}" class="btn btn-primary">Get Started</a>
+                  </div>
+                  <div class="hero-banner">
+                     <img
+                        src="{{ url_for('static', filename='images/hero-banner.png') }}"
+                        width="660"
+                        height="753"
+                        alt="hero banner"
+                        class="w-100"
+                        />
+                     <img
+                        src="{{ url_for('static', filename='images/hero-circle-one.png') }}"
+                        width="666"
+                        height="666"
+                        aria-hidden="true"
+                        alt=""
+                        class="circle circle-1"
+                        />
+                     <img
+                        src="{{ url_for('static', filename='images/hero-circle-two.png') }}"
+                        width="666"
+                        height="666"
+                        aria-hidden="true"
+                        alt=""
+                        class="circle circle-2"
+                        />
+                     <img
+                        src="{{ url_for('static', filename='images/heart-rate.svg') }}"
+                        width="255"
+                        height="270"
+                        alt="heart rate"
+                        class="abs-img abs-img-1"
+                        />
+                     <img
+                        src="{{url_for('static', filename='images/calories.svg')}}"
+                        width="348"
+                        height="224"
+                        alt="calories"
+                        class="abs-img abs-img-2"
+                        />
+                  </div>
+               </div>
+            </section>
+            <!--
+               - #ABOUT
+               -->
+            <section class="section about" id="about" aria-label="about">
+               <div class="container">
+                  <div class="about-banner has-after">
+                     <img
+                        src="{{url_for('static',filename='images/about-circle-one.png')}}"
+                        width="660"
+                        height="534"
+                        loading="lazy"
+                        aria-hidden="true"
+                        alt=""
+                        class="circle circle-1"
+                        />
+                     <img
+                        src="{{url_for('static',filename='images/about-circle-two.png')}}"
+                        width="660"
+                        height="534"
+                        loading="lazy"
+                        aria-hidden="true"
+                        alt=""
+                        class="circle circle-2"
+                        />
+                     <img
+                        src="{{url_for('static', filename='images/ai_trainer.jpeg')}}"
+                        width="660"
+                        height="648"
+                        loading="lazy"
+                        alt="ai-trainer"
+                        class="w-100"
+                        />
+                  </div>
+                  <div class="about-content">
+                     <p class="section-subtitle">About Us</p>
+                     <h2 class="h2 section-title">Welcome To Our AI Fitness </h2>
+                     <p class="section-text">
+                        Introducing OPTIMIZEU, your AI-powered fitness trainer that helps you achieve your fitness goals with personalized workout plans and diet recommendations. Whether you're aiming to lose weight, build muscle, or improve your overall health, OPTIMIZEU analyzes your fitness level, goals, and lifestyle to create tailored workout routines and meal plans. With real-time progress tracking and continuous adjustments based on your feedback, OPTIMIZEU makes it easier than ever to stay motivated and get in shape. Your health journey starts here—optimize your body with OPTIMIZEU today!
+                     </p>
+                     <p class="section-text">
+                        Take control of your fitness journey with OPTIMIZEU, the AI-driven personal trainer designed to help you transform your body and lifestyle. From customized workout routines to balanced meal plans, OPTIMIZEU creates a comprehensive fitness strategy tailored just for you. Whether you have limited time, specific goals, or unique dietary needs, OPTIMIZEU adapts to your requirements and provides expert guidance every step of the way. Achieve lasting results and stay on track with real-time adjustments and progress tracking. Elevate your fitness game and unlock your full potential with OPTIMIZEU!
+                     </p>
+                     <div class="wrapper">
+                        <div class="about-coach">
+                           <figure class="coach-avatar">
+                           </figure>
+                           <div>
+                              <h3 class="h3 coach-name">OPTIMIZEU AI Trainer</h3>
+                              <p class="coach-title">Your Coach</p>
+                           </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explore More</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!--
+               - #VIDEO
+               -->
+            <section class="section video" aria-label="video">
+               <div class="container">
+                  <div class="video-card has-before has-bg-image">
+                     <h2 class="h2 card-title">Explore Fitness Life</h2>
+                     <a href="https://www.youtube.com/watch?v=-SSYX8sIOmM" class="play-btn" aria-label="play video">
+                        <ion-icon name="play-sharp" aria-hidden="true"></ion-icon>
+                     </a>
+                     <a href="https://www.youtube.com/watch?v=RTef7LufLYg&pp=ygUZd29ya291dCBwbGF5bGlzdCBleGNlcmljZQ%3D%3D" class="btn-link has-before">Watch More</a>
+                  </div>
+               </div>
+            </section>
+            <!--
+               - #CLASS
+               -->
+            <section
+               class="section class bg-dark has-bg-image"
+               id="class"
+               aria-label="class"
+               style="background-image: url('{{ url_for('static', filename='images/classes-bg.png') }}')"
+               >
+                  <!--
+                     - custom js link
+                     -->
+                  <script src="url('{{ url_for('static', filename='script.js') }}')" defer></script>
+                  <!--
+                     - ionicon link
+                     -->
+                  <script
+                     type="module"
+                     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+                     ></script>
+                  <script
+                     nomodule
+                     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+                     ></script>
+               </div>
+               <footer class="footer">
+      <div
+        class="section footer-top bg-dark has-bg-image"
+        style="background-image: url('./assets/images/footer-bg.png')"
+      >
+        <div class="container">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+
+              <span class="span">OPTIMIZEU</span>
+            </a>
+
+            <p class="footer-brand-text">
+              Thanks For Being with us you Fitness AI
+            </p>
+
+            <div class="wrapper">
+<!--               footer-clock.png-->
+              <img
+                src="{{ url_for('static', filename='images/footer-clock.png') }}"
+                width="34"
+                height="34"
+                loading="lazy"
+                alt="Clock"
+              />
+              <ul class="footer-brand-list">
+                <li>
+                  <p class="footer-brand-title"></p>
+                  <p></p>
+                </li>
+                <li>
+                  <p class="footer-brand-title"></p>
+                  <p></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title has-before">Our Links</p>
+            </li>
+
+            <li>
+              <a href="#home" class="footer-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#about" class="footer-link">About Us</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list">
+
+            <li class="footer-list-item">
+              <div class="icon">
+                <ion-icon name="location" aria-hidden="true"></ion-icon>
+              </div>
+
+              <address class="address footer-link">
+                1247/Plot No. 39, 15th Phase, Colony, Kukatpally, Hyderabad
+              </address>
+            </li>
+
+            <li class="footer-list-item">
+              <div class="icon">
+                <ion-icon name="call" aria-hidden="true"></ion-icon>
+              </div>
+
+              <div>
+                <a href="tel:number" class="footer-link">1800-121-3637</a>
+
+                <a href="tel:+number" class="footer-link"
+                  >+91 567234123</a
+                >
+              </div>
+            </li>
+
+            <li class="footer-list-item">
+              <div class="icon">
+                <ion-icon name="mail" aria-hidden="true"></ion-icon>
+              </div>
+
+              <div>
+                <a href="#SyntaxSamurai@gmail.com" class="footer-link"
+                  >SyntaxSamurai@gmail.com</a
+                >
+
+                <a href="#SyntaxSamurai@gmail.com" class="footer-link"
+                  >SyntaxSamurai@gmail.com</a
+                >
+              </div>
+            </li>
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <ul class="social-list">
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy; 2022 Fitlife. All Rights Reserved By
+            <a href="#" class="copyright-link">codewithsadee.</a>
+          </p>
+
+          <ul class="footer-bottom-list">
+            <li>
+              <a href="#" class="footer-bottom-link has-before"
+                >Privacy Policy</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="footer-bottom-link has-before"
+                >Terms & Condition</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!--
+    - #BACK TO TOP
+  -->
+
+    <a
+      href="#top"
+      class="back-top-btn"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!--
+    - custom js link
+  -->
+    <script src="{{url_for('static', filename='script.js')}}" defer></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+            </section>
+         </article>
+      </main>
+   </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OptimizeU - AI Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='model.css') }}" />
+    <script src="{{ url_for('static', filename='scriptm.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">OptimizeU</h1>
+        <p class="subtitle">Get personalized AI-generated fitness plans</p>
+
+        <form id="ai-form" action="/ai" method="post"> <!-- Updated action to match Flask route -->
+            <div class="input-group">
+                <label for="goalWeight">Goal Weight (kg)</label>
+                <div class="number-input">
+                    <button class="btn" type="button" onclick="decreaseValue('goalWeight')">-</button>
+                    <input type="number" id="goalWeight" name="goalWeight" value="" step="0.01" min="0" max="200" required />
+                    <button class="btn" type="button" onclick="increaseValue('goalWeight')">+</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="currentWeight">Current Weight (kg)</label>
+                <div class="number-input">
+                    <button class="btn" type="button" onclick="decreaseValue('currentWeight')">-</button>
+                    <input type="number" id="currentWeight" name="currentWeight" value="" step="0.01" min="0" max="200" required />
+                    <button class="btn" type="button" onclick="increaseValue('currentWeight')">+</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" name="height" step="0.1" min="0" required />
+            </div>
+
+            <div class="input-group">
+                <label for="calorieGoal">Daily Calorie Goal</label>
+                <input type="number" id="calorieGoal" name="calorieGoal" value="" min="0" required />
+            </div>
+
+            <div class="input-group">
+                <label for="fitnessLevel">Fitness Level</label>
+                <select id="fitnessLevel" name="fitnessLevel" required>
+                    <option value="">Select fitness level</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+            <button type="submit" class="generate-btn">Generate AI Plan</button>
+        </form>
+    </div>
+</body>
+</html>

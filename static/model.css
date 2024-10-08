@@ -1,0 +1,75 @@
+body {
+    background-color: #121212; /* Dark background color */
+    color: white; /* White text color */
+    font-family: Arial, sans-serif; /* Font family */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding around the body */
+}
+
+.container {
+    max-width: 400px; /* Keep a narrow width for the form */
+    margin: auto; /* Center the form */
+    background-color: #1e1e1e; /* Darker background for the form */
+    padding: 30px; /* Increase padding for more height */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+h1 {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.input-group {
+    margin-bottom: 20px; /* Space between input groups */
+}
+
+label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+.number-input {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Align buttons and input */
+    align-items: center; /* Center items vertically */
+}
+
+input[type="number"],
+input[type="url"],
+select {
+    width: 70%; /* Set input width */
+    padding: 10px; /* Add padding */
+    border: 1px solid #fd3c0b; /* Red border for inputs */
+    border-radius: 5px; /* Rounded corners for inputs */
+    background-color: #2e2e2e; /* Dark background for inputs */
+    color: white; /* White text for inputs */
+}
+
+.btn {
+    background-color: #fd3c0b; /* Red background for buttons */
+    color: white; /* White text color for buttons */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners for buttons */
+    width: 20%; /* Fixed width for buttons */
+}
+
+.btn:hover {
+    background-color: #e52c0a; /* Darker red on hover */
+}
+
+.generate-btn {
+    background-color: #fd3c0b; /* Red background for the generate button */
+    color: white; /* White text for the generate button */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for the generate button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners for the generate button */
+    width: 100%; /* Full width for the generate button */
+}
+
+.generate-btn:hover {
+    background-color: #e52c0a; /* Darker red on hover for the generate button */
+}
